@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+
 import SummaryCard from '../components/SummaryCard'
 import Charts from '../components/Charts'
 
@@ -18,7 +19,7 @@ export default function Result() {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const res = await axios.get(`/api/result/${jobId}`)
+
       if (res.data.summary) {
         setData(res.data)
         clearInterval(interval)
