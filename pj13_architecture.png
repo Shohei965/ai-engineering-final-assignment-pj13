@@ -1,0 +1,8 @@
+```mermaid
+graph TD
+  A[User] --> B[React Frontend]
+  B --> C[FastAPI Backend]
+  C --> D[LangGraph Pipeline]
+  D --> E[Crawler Stubs]
+  D --> F[Gemini Flash-2.5]
+```
