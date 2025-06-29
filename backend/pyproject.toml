@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pj13-backend"
+version = "0.1.0"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "langgraph>=0.0.4",
+    "httpx>=0.26",
+    "pydantic>=2.0",
+    "python-dotenv>=1.0",
+    "google-generativeai>=0.1",
+]
+
+[project.optional-dependencies]
+dev = ["black", "isort", "flake8", "pytest", "pytest-asyncio"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"
