@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
-const API_BASE = import.meta.env.VITE_API_BASE || ''
 import SummaryCard from '../components/SummaryCard'
 import Charts from '../components/Charts'
 
@@ -20,7 +19,7 @@ export default function Result() {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const res = await axios.get(`${API_BASE}/api/result/${jobId}`)
+
       if (res.data.summary) {
         setData(res.data)
         clearInterval(interval)
